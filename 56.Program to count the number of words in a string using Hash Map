@@ -1,0 +1,31 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class WordCount {
+    public static void main(String[] args) {
+        String input = "this is a test this is only a test";
+
+       
+        Map<String, Integer> wordCounts = countWords(input);
+
+       
+        wordCounts.forEach((word, count) -> 
+            System.out.println("Word: '" + word + "', Count: " + count)
+        );
+    }
+
+    public static Map<String, Integer> countWords(String str) {
+
+        Map<String, Integer> wordCountMap = new HashMap<>();
+
+
+        String[] words = str.split("\\s+");
+
+ 
+        for (String word : words) {
+            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
+        }
+
+        return wordCountMap;
+    }
+}

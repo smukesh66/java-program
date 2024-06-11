@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class SortHashMapByValue {
+    public static void main(String[] args) {
+      
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("apple", 3);
+        map.put("banana", 2);
+        map.put("cherry", 5);
+        map.put("date", 1);
+
+
+        System.out.println("Original HashMap: " + map);
+
+    
+        map.entrySet()
+           .stream()
+           .sorted(Map.Entry.comparingByValue())
+           .forEach(entry -> System.out.println(entry.getKey() + " = " + entry.getValue()));
+    }
+}
+output:
+Original HashMap: {apple=3, banana=2, cherry=5, date=1}
+date = 1
+banana = 2
+apple = 3
+cherry = 5
