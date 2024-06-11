@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void printMultiplicationTable(int m, int n) {
+        for (int i = 1; i <= n; i++) {
+            System.out.println(m + " x " + i + " = " + (m * i));
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the value of M: ");
+        int m = scanner.nextInt();
+
+        System.out.print("Enter the value of N: ");
+        int n = scanner.nextInt();
+
+        printMultiplicationTable(m, n);
+        
+        scanner.close();
+    }
+}
+output:
+4 x 1 = 4
+4 x 2 = 8
+4 x 3 = 12
+4 x 4 = 16
+4 x 5 = 20

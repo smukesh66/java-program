@@ -1,0 +1,101 @@
+import java.util.Scanner;
+
+public class MenuDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("\nSelect a statement to display its syntax:");
+            System.out.println("1. if statement");
+            System.out.println("2. if-else statement");
+            System.out.println("3. switch statement");
+            System.out.println("4. for loop");
+            System.out.println("5. while loop");
+            System.out.println("6. do-while loop");
+            System.out.println("0. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    displayIfStatementSyntax();
+                    break;
+                case 2:
+                    displayIfElseStatementSyntax();
+                    break;
+                case 3:
+                    displaySwitchStatementSyntax();
+                    break;
+                case 4:
+                    displayForLoopSyntax();
+                    break;
+                case 5:
+                    displayWhileLoopSyntax();
+                    break;
+                case 6:
+                    displayDoWhileLoopSyntax();
+                    break;
+                case 0:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 0);
+
+        scanner.close();
+    }
+
+    public static void displayIfStatementSyntax() {
+        System.out.println("Syntax of if statement:");
+        System.out.println("if (condition) {");
+        System.out.println("    // statements to execute if condition is true");
+        System.out.println("}");
+    }
+
+    public static void displayIfElseStatementSyntax() {
+        System.out.println("Syntax of if-else statement:");
+        System.out.println("if (condition) {");
+        System.out.println("    // statements to execute if condition is true");
+        System.out.println("} else {");
+        System.out.println("    // statements to execute if condition is false");
+        System.out.println("}");
+    }
+
+    public static void displaySwitchStatementSyntax() {
+        System.out.println("Syntax of switch statement:");
+        System.out.println("switch (variable) {");
+        System.out.println("    case value1:");
+        System.out.println("        // statements");
+        System.out.println("        break;");
+        System.out.println("    case value2:");
+        System.out.println("        // statements");
+        System.out.println("        break;");
+        System.out.println("    // you can have any number of case statements");
+        System.out.println("    default:");
+        System.out.println("        // statements");
+        System.out.println("}");
+    }
+
+    public static void displayForLoopSyntax() {
+        System.out.println("Syntax of for loop:");
+        System.out.println("for (initialization; condition; update) {");
+        System.out.println("    // statements to be executed");
+        System.out.println("}");
+    }
+
+    public static void displayWhileLoopSyntax() {
+        System.out.println("Syntax of while loop:");
+        System.out.println("while (condition) {");
+        System.out.println("    // statements to be executed");
+        System.out.println("}");
+    }
+
+    public static void displayDoWhileLoopSyntax() {
+        System.out.println("Syntax of do-while loop:");
+        System.out.println("do {");
+        System.out.println("    // statements to be executed");
+        System.out.println("} while (condition);");
+    }
+}
