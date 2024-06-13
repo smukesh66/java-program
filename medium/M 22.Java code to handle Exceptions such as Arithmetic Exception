@@ -1,0 +1,23 @@
+public class MultiCatchExample {
+    public static void main(String[] args) {
+        try {
+            // Code that may throw exceptions
+            int result = divideByZero();
+            int[] array = new int[5];
+            accessOutOfBoundsElement(array);
+            String str = null;
+            str.length();
+        } catch (ArithmeticException | ArrayIndexOutOfBoundsException | NullPointerException ex) {
+            // Handling multiple exceptions
+            System.out.println("Exception occurred: " + ex.getMessage());
+        }
+    }
+
+    public static int divideByZero() {
+        return 5 / 0;
+    }
+
+    public static void accessOutOfBoundsElement(int[] array) {
+        System.out.println(array[10]);
+    }
+}

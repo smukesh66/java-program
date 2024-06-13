@@ -1,0 +1,17 @@
+import java.util.Hashtable;
+
+public class BankDetails {
+    public static void main(String[] args) {
+        Hashtable<Integer, String> bankDetails = new Hashtable<>();
+
+        bankDetails.put(12345, "Alice");
+        bankDetails.put(67890, "Bob");
+        bankDetails.put(11223, "Charlie");
+
+        System.out.println("Size of HashTable: " + bankDetails.size());
+
+        bankDetails.clear();
+
+        System.out.println("Size of HashTable after clearing: " + bankDetails.size());
+    }
+}

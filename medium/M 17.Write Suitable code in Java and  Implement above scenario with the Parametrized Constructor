@@ -1,0 +1,46 @@
+// Define the base class SuperClass
+class SuperClass {
+    int value;
+
+    // Parameterized constructor
+    SuperClass(int value) {
+        this.value = value;
+    }
+
+    // Method to display the value
+    void display() {
+        System.out.println("SuperClass Value: " + value);
+    }
+}
+
+// Define the SubClass extending SuperClass
+class SubClass extends SuperClass {
+    int value; // This hides the value member in SuperClass
+
+    // Parameterized constructor
+    SubClass(int superValue, int subValue) {
+        super(superValue); // Call to the superclass constructor
+        this.value = subValue;
+    }
+
+    // Method to display both values
+    void display() {
+        super.display(); // Call to the superclass display method
+        System.out.println("SubClass Value: " + value);
+    }
+}
+
+// Main class to test the functionality
+public class Main {
+    public static void main(String[] args) {
+        // Sample input values
+        int superValue = 100;
+        int subValue = 200;
+
+        // Create an object of SubClass
+        SubClass obj = new SubClass(superValue, subValue);
+
+        // Display the values
+        obj.display();
+    }
+}

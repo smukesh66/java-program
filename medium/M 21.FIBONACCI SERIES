@@ -1,0 +1,28 @@
+public class FibonacciSeries implements Runnable {
+    private int n;
+
+    public FibonacciSeries(int n) {
+        this.n = n;
+    }
+
+    @Override
+    public void run() {
+        int a = 0;
+        int b = 1;
+
+        System.out.print("Fibonacci Series for " + n + " terms: ");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int temp = a + b;
+            a = b;
+            b = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int numberOfTerms = 5; // Change this value as per your requirement
+        Thread thread = new Thread(new FibonacciSeries(numberOfTerms));
+        thread.start();
+    }
+}
